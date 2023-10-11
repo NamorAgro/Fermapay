@@ -106,6 +106,8 @@ closeModal.forEach(button =>{
     });
 });
 
+const body = document.body;
+
 function openModalWindow(modal){
     if (modal == null) return
     modal.classList.add('active');
@@ -229,6 +231,7 @@ function handleIntersect(entries, observer) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const checkmark = entry.target.querySelector('.checkmark');
+            console.log(checkmark)
             if (checkmark) {
                 checkmark.classList.add('animated');
                 observer.unobserve(entry.target);
@@ -238,8 +241,8 @@ function handleIntersect(entries, observer) {
 }
 
 const options = {
-    threshold: [0, 0.25, 0.5, 0.75, 1],
-    rootMargin: '-140px'
+    threshold: 0.1,
+    rootMargin: '-50px'
 };
 
 const observer = new IntersectionObserver(handleIntersect, options);
