@@ -141,11 +141,11 @@
 /* --------------- main content ------------- */
 main{
     margin: 0 auto;
-    width: 90vh;
+    width: 70%;
 }
 @media screen and (max-width: 1280px) {
   main{
-    width: 90vw;
+    width: 80%;
   }
 }
 
